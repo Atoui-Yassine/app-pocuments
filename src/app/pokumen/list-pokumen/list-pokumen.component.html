@@ -1,0 +1,24 @@
+<h1 class="center">Liste de Pokémons </h1>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let pokumen of pokcmonsList" class="col m4 s6 " (click)="navigatetoPOkumon(pokumen.id )"  >
+            <div class="card horizontal" pkumBorderCard>
+            <div class="card-image">
+                <img [src]="pokumen.picture ">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                  <p> {{ pokumen.name }}</p> 
+                  <p><small> {{ pokumen.created | date:"dd/mm/yyyy" | uppercase }}</small></p>
+                  <span *ngFor="let type of pokumen.types  " class="{{type | pokumenTypeColor }}">
+                      {{type}}
+                  </span>
+              </div>
+           </div>
+            </div>
+            
+          
+        </div>
+    </div>
+ 
+</div>
